@@ -1,0 +1,47 @@
+﻿<Page xmlns:my="using:Microsoft.Toolkit.Uwp.UI.Controls" 
+    x:Class="Mail_Mockup.days"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Mail_Mockup"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ani="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+      xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
+    
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Margin="20,102,0,0">
+            <GridView x:Name="DaysGridView" SelectionMode="Single"  Tapped="DaysGridView_Tapped" IsTapEnabled="True" Loaded="DaysGridView_Loaded"
+                       ani:ItemsReorderAnimation.Duration="00:00:00.2350000">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Padding="6">
+                            <Grid Padding="0" CornerRadius="4">
+                                
+                                <Image Source="{Binding BackGround}" Width="350" Height="250" Stretch="UniformToFill" x:Name="TheImage" />
+                              
+                                <Rectangle Width="350" Height="250" Fill="#333333" Opacity="0.30"/>
+                                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="12">
+                                    <Ellipse Width="32" Height="32" Fill="{ThemeResource SystemControlAcrylicElementBrush}"  />
+                                    <TextBlock Text="{Binding ImageNumber}" Opacity="1" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="top" Margin="14,12,0,12">
+                                    <TextBlock Margin="8,8,0,0" Text="{Binding MainHeading}" FontSize="24" TextWrapping="Wrap"  CharacterSpacing="-20" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding SubHeading}" Opacity="0.60" Margin="8,4,0,0" FontWeight="SemiBold" Foreground="White"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                
+            </GridView>
+            
+            
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>
